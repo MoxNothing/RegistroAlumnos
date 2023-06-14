@@ -13,7 +13,6 @@ import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
 
-
 public class MainApp extends Application {
 
     private TextField nombreField;
@@ -70,10 +69,41 @@ public class MainApp extends Application {
         String genero = generoChoiceBox.getValue();
         String grado = gradoField.getText();
 
-        // Realizar los cálculos de cuotas y matrícula según tus reglas de negocio
+        Stage reporteStage = new Stage();
+        reporteStage.setTitle("Reporte");
 
-        // Generar el reporte utilizando una biblioteca de generación de informes
-        // Aquí puedes agregar el código necesario para generar el reporte en PDF o Excel
+        GridPane reporteGridPane = new GridPane();
+        reporteGridPane.setPadding(new Insets(20));
+        reporteGridPane.setVgap(10);
+        reporteGridPane.setHgap(10);
+
+        Label nombreLabel = new Label("Nombre: ");
+        Label apellidoLabel = new Label("Apellido: ");
+        Label generoLabel = new Label("Genero: ");
+        Label gradoLabel = new Label("Grado: ");
+
+        Label nombreValueLabel = new Label(nombre);
+        Label apellidoValueLabel = new Label(apellido);
+        Label generoValueLabel = new Label(genero);
+        Label gradoValueLabel = new Label(grado);
+
+        reporteGridPane.add(nombreLabel, 0, 0);
+        reporteGridPane.add(nombreValueLabel, 1, 0);
+        reporteGridPane.add(apellidoLabel, 0, 1);
+        reporteGridPane.add(apellidoValueLabel, 1, 1);
+        reporteGridPane.add(generoLabel, 0, 2);
+        reporteGridPane.add(generoValueLabel, 1, 2);
+        reporteGridPane.add(gradoLabel, 0, 3);
+        reporteGridPane.add(gradoValueLabel, 1, 3);
+
+        Scene reporteScene = new Scene(reporteGridPane, 400, 200);
+        reporteStage.setScene(reporteScene);
+
+
+        Stage primaryStage = (Stage) nombreField.getScene().getWindow();
+        reporteStage.initOwner(primaryStage);
+
+        reporteStage.show();
     }
 
     public static void main(String[] args) {
