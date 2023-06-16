@@ -1,6 +1,7 @@
 package com.example.registroalumnos;
 
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -23,6 +24,7 @@ public class RegistroDatos {
         gridPane.setPadding(new Insets(20));
         gridPane.setVgap(10);
         gridPane.setHgap(10);
+        gridPane.setAlignment(Pos.CENTER);
 
         // Labels
         Label nombreLabel = new Label("Nombre:");

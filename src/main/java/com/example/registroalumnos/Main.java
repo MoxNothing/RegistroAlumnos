@@ -61,10 +61,8 @@ public class Main extends Application {
         reporteStage.show();
     }
 
-    public void showResultado(String montoAPagar) {
-        // Código para mostrar la ventana Resultado con el monto a pagar
-        Resultado resultado = new Resultado(montoAPagar);
-        // Aquí debes implementar el código necesario para mostrar la ventana Resultado
+    public void showResultado(String nombre, String apellido, String genero, String grado, String modalidad, String montoAPagar, String duracion) {
+        Resultado.mostrarReporte(nombre, apellido, genero, grado, modalidad, montoAPagar, duracion);
     }
 
 }

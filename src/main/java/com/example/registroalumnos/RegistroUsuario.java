@@ -1,6 +1,7 @@
 package com.example.registroalumnos;
 
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -21,10 +22,12 @@ public class RegistroUsuario {
         VBox layout = new VBox();
         layout.setPadding(new Insets(20));
         layout.setSpacing(10);
+        layout.setAlignment(Pos.CENTER);
 
         GridPane gridPane = new GridPane();
         gridPane.setVgap(10);
         gridPane.setHgap(10);
+        gridPane.setAlignment(Pos.CENTER);
 
         // Labels
         Label correoLabel = new Label("Correo:");
@@ -36,6 +39,8 @@ public class RegistroUsuario {
 
         // Button
         Button iniciarButton = new Button("Iniciar");
+
+
         iniciarButton.setOnAction(e -> main.showRegistroDatos());
 
         // Add elements to gridPane

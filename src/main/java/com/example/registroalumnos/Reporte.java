@@ -1,6 +1,7 @@
 package com.example.registroalumnos;
 
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -21,8 +22,9 @@ public class Reporte {
         gridPane.setPadding(new Insets(20));
         gridPane.setVgap(10);
         gridPane.setHgap(10);
+        gridPane.setAlignment(Pos.CENTER);
 
-        // Labels
+
         Label nombreLabel = new Label("Nombre: ");
         Label apellidoLabel = new Label("Apellido: ");
         Label generoLabel = new Label("Género: ");
@@ -31,7 +33,7 @@ public class Reporte {
         Label montoLabel = new Label("Monto a Pagar: ");
         Label duracionLabel = new Label("Duración del Semestre: ");
 
-        // Values
+
         Label nombreValueLabel = new Label(nombre);
         Label apellidoValueLabel = new Label(apellido);
         Label generoValueLabel = new Label(genero);
@@ -39,7 +41,7 @@ public class Reporte {
         montoValueLabel = new Label();
         duracionValueLabel = new Label();
 
-        // ChoiceBox
+
         modalidadChoiceBox = new ChoiceBox<>();
         modalidadChoiceBox.getItems().addAll("Presencial", "Semipresencial", "A distancia");
         modalidadChoiceBox.setOnAction(e -> mostrarMontoYDuracion());
@@ -59,9 +61,9 @@ public class Reporte {
         gridPane.add(duracionLabel, 0, 6);
         gridPane.add(duracionValueLabel, 1, 6);
 
-        // Button
+        // Button mostrara el reporte
         Button calcularButton = new Button("Calcular");
-        calcularButton.setOnAction(e -> main.showResultado(montoValueLabel.getText()));
+        calcularButton.setOnAction(e -> main.showResultado(nombreValueLabel.getText(),apellidoValueLabel.getText(),generoValueLabel.getText(),gradoValueLabel.getText(),modalidadChoiceBox.getValue(),montoValueLabel.getText(),duracionValueLabel.getText()));
         gridPane.add(calcularButton, 0, 7);
 
         return gridPane;
@@ -73,17 +75,17 @@ public class Reporte {
         int duracion = obtenerDuracionPorModalidad(modalidad);
 
         montoValueLabel.setText("$" + monto);
-        duracionValueLabel.setText(duracion + " semanas");
+        duracionValueLabel.setText(duracion + " Meses");
     }
 
     private double obtenerMontoPorModalidad(String modalidad) {
         switch (modalidad) {
             case "Presencial":
-                return 140.0;
+                return 140.0 * 4;
             case "Semipresencial":
-                return 100.0;
+                return 150.0 * 5;
             case "A distancia":
-                return 80.0;
+                return 200.0 * 3;
             default:
                 return 0.0;
         }
@@ -93,9 +95,9 @@ public class Reporte {
         switch (modalidad) {
             case "Presencial":
             case "Semipresencial":
-                return 16;
+                return 4;
             case "A distancia":
-                return 8;
+                return 2;
             default:
                 return 0;
         }
