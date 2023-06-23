@@ -135,7 +135,7 @@
         <dependency>
             <groupId>net.sf.ij-plugins</groupId>
             <artifactId>ijp-color-ui_3</artifactId>
-            <version>0.12.1</version>
+            <version>0.12.2</version>
         </dependency>
         <dependency>
             <groupId>org.webjars.npm</groupId>
