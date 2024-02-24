@@ -55,7 +55,7 @@
         <dependency>
             <groupId>net.mm2d.color-chooser</groupId>
             <artifactId>color-chooser</artifactId>
-            <version>0.6.0</version>
+            <version>0.7.2</version>
         </dependency>
         <dependency>
             <groupId>mil.nga</groupId>
@@ -185,7 +185,7 @@
         <dependency>
             <groupId>net.mm2d.color-chooser</groupId>
             <artifactId>color-chooser</artifactId>
-            <version>0.6.0</version>
+            <version>0.7.2</version>
         </dependency>
         <dependency>
             <groupId>mil.nga</groupId>
